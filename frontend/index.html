@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>GreenBounty - Fruit and Vegetable API</title>
+    <link href="static/styles/base.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  </head>
+  <body>
+    <nav class="navbar">
+      <!-- LOGO -->
+      <div class="logo">
+        <img src="static/images/logo4.png">
+      </div>
+  
+      <!-- NAVIGATION MENU -->
+      <ul class="nav-links">
+  
+        <!-- USING CHECKBOX HACK -->
+        <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+  
+        <!-- NAVIGATION MENUS -->
+        <div class="menu">
+  
+          <li><a href="/">Home</a></li>
+          <li><a href="/">About</a></li>
+  
+          <li class="services">
+            <a href="/">APIs</a>
+  
+            <!-- DROPDOWN MENU -->
+            <ul class="dropdown">
+              <li><a href="/">Fruit API</a></li>
+              <li><a href="/">Vegetable API</a></li>
+            </ul>
+  
+          </li>
+  
+          <li><a href="/">Contact Us</a></li>
+        </div>
+      </ul>
+    </nav>
+    <main>
+      <div class="px-4 py-5 text-center bgr-home">
+        <h1 class="display-5 fw-bold home-title col-8 mx-auto">Fueling Your App with Nature's Gift</h1>
+        <div class="col-lg-8 mx-auto">
+          <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5 header-blocks">
+            <div class="col">
+              <div class="card card-cover h-100 overflow-hidden text-white bg-dark-opacity rounded-5 shadow-lg">
+                <div class="d-flex flex-column h-100 p-1 pb-3 text-white text-shadow-1">
+                  <h2 class="pt-3 mb-3 lh-1">
+                    <span class="title">Nutrition Analysis API</span>
+                    <span class="desc">Copy/paste any food recipe and learn its nutrition details in under a second</span>
+                  </h2>
+                </div>
+                <a href="https://developer.edamam.com/edamam-nutrition-api" class="btn btn-gray px-4 mb-3">More info</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
