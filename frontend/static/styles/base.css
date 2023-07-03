@@ -99,6 +99,7 @@ li {
   display: flex;
   gap: 1em;
   font-size: 18px;
+  z-index: 4;
 }
 
 .menu li:hover {
@@ -117,7 +118,7 @@ li {
 }
 
 .dropdown {
-  background-color: rgb(1, 139, 139);
+  background-color: rgb(1, 139, 139, 0.3);
   padding: 1em 0;
   position: absolute; /*WITH RESPECT TO PARENT*/
   display: none;
@@ -163,9 +164,9 @@ input[type=checkbox] {
  .menu {
     display:none;
     position: absolute;
-    background-color:teal;
+    background-color:rgb(0, 128, 128, 0.6);
     right: 0;
-    left: 0;
+    left: 50%;
     text-align: center;
     padding: 16px 0;
   }
@@ -189,7 +190,7 @@ input[type=checkbox] {
   }
 
   .dropdown {
-    left: 50%;
+    left: 0;
     top: 30px;
     transform: translateX(35%);
   }
