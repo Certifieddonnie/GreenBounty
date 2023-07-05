@@ -1,3 +1,6 @@
 .venv
 .vscode
+<<<<<<< HEAD
 green_bounty/green_bounty/lax
+=======
+>>>>>>> fbf9c94 ([feat]: users auth api)
