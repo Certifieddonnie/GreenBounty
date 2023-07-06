@@ -114,7 +114,7 @@ GET /api/vi/auth/user
 ## Item search
 Search for fruits or vegetables based on a keyword or partial name.
 
-### All Fruits
+### All items
 
 **Endpoint:** `/api/vi/fruits`
 
@@ -143,7 +143,7 @@ GET /api/vi/fruits
 }
 
 ```
-This request returns all items in the database, according to their id. 
+`This request returns all items in the database, according to their id. `
 
 ### One item
 
