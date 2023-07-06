@@ -8,13 +8,19 @@ Welcome to the documentation of GreenBounty API! This API provides a wide range 
 # Table of Contents
 
 1. [Getting Started](#getting-started)
-2. [API Endpoints](#api-endpoints)
-   - [Search](#search)
-   - [](#random-string)
-   - [](#random-string)
-3. [Authentication](#authentication)
-4. [Error Handling](#error-handling)
-5. [Examples](#examples)
+2. [API Endpoints](#api-endpoints) 
+    - [Authentication](#authentication)
+        - [Welcome view](#welcome-view)
+        - [Register](#register)
+        - [Login](#login)
+        - [User profile](#user-profile)
+        - [Update profile](#update-profile)
+        - [Change password](#change-password)
+        - [Delete user](#delete-user)
+    - [Search](#search)
+3. [Error Handling](#error-handling)
+4. [Examples](#examples)
+5. [Contributing](#contributing)
 6. [License](#license)
 
 ## Getting Started
@@ -22,10 +28,91 @@ Welcome to the documentation of GreenBounty API! This API provides a wide range 
 To begin using the GreenBounty API, you can simply make requests to the available API endpoints listed below. User authentication is required for accessing the basic information about fruits and vegetables.
 
 ## API Endpoints
-### Search
+
+## Authentication
+
+### Welcome view
+**Endpoint:** `/api/vi/auth`
+
+**Method:** "GET"
+
+**Example Request**
+```
+GET /api/vi/auth
+```
+**Response:** This request leads you to the welcome view.
+
+### Register
+**Endpoint:** `/api/vi/auth/register`
+
+**Method:** "GET"
+
+**Example Request**
+```
+GET /api/vi/auth/register
+```
+**Response:** This request enables new users to enter their details and thereafter use to get logged in.
+
+### Login
+**Endpoint:** `/api/vi/auth/login`
+
+**Method:** "GET"
+
+**Example Request**
+```
+GET /api/vi/auth/login
+```
+**Response:** This request leads old users to the page where they enter their login details and get logged in to utilise and consume the API.
+
+### User profile
+**Endpoint:** `/api/vi/auth/user`
+
+**Method:** "GET"
+
+**Example Request**
+```
+GET /api/vi/auth/user
+```
+**Response:**  It serves as a representation of a user's identity and contains details that are relevant to the user's interactions, preferences, and personalization within the given context.
+
+### Update profile
+**Endpoint:** `/api/vi/auth/update_profile`
+
+**Method:** "GET"
+
+**Example Request**
+```
+GET /api/vi/auth/update_profile
+```
+**Response:**  This enables a user to update parameters in their user profile to their preference.
+
+### Change password
+**Endpoint:** `/api/vi/auth/change_password`
+
+**Method:** "GET"
+
+**Example Request**
+```
+GET /api/vi/auth/change_password
+```
+**Response:**  This request gives users the access to change the password associated with their account.
+
+### Delete user
+**Endpoint:** `/api/vi/auth/delete_user`
+
+**Method:** "GET"
+
+**Example Request**
+```
+GET /api/vi/auth/delete_user
+```
+**Response:**  This request enables the user to delete their account associated with GreenBounty API
+
+
+## Search
 Search for fruits or vegetables based on a keyword or partial name.
 
-**Endpoint:** `/search`
+**Endpoint:** `/api/vi/fruits/search`
 
 **Method:** "GET"
 
@@ -33,8 +120,9 @@ Search for fruits or vegetables based on a keyword or partial name.
 - query (required): The keyword or partial name to search for. (e.g banana)
 
 **Example Request**
+**Query search by name**
 ```
-GET /search?query=banana
+GET /api/vi/fruits/search?name=banana
 ```
 **Example Response**
 ```
@@ -51,21 +139,24 @@ GET /search?query=banana
 
 ```
 
-### Random Number
+**Query search by Botanical name**
+```
+GET /api/vi/fruits/search?botan=Musa spp
+```
+**Example Response**
+```
+{
+  "results": [
+    {
+      "name": "Banana",
+      "botanical name": "Musa spp",
+      "Vitamins": "B6 Pyridoxine",
+      "ph value": "4.5 - 5.2"
+    },
+  ]
+}
 
-Content for the "Random Number" subsection goes here.
-
-### Random String
-
-Content for the "Random String" subsection goes here.
-
-### Random Custom Data
-
-Content for the "Random Custom Data" subsection goes here.
-
-## Authentication
-
-Content for the "Authentication" section goes here.
+```
 
 ## Error Handling
 
