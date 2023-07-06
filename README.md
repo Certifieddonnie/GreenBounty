@@ -198,10 +198,25 @@ GET /api/vi/fruits/search?botan=Musa spp
 
 Usage samples and code snippets
 ```
-/api/vi/auth/register
+/api/vi/auth/register/
 ```
 ![image](https://github.com/Certifieddonnie/GreenBounty/assets/81980032/af3a6c6c-bc4c-404c-82d3-8bd4bc453434)
 
+```
+/api/v1/auth/login/
+```
+
+```
+/api/v1/auth/user/
+```
+
+```
+/api/v1/fruits
+```
+
+```
+/api/v1/fruits/search?name=Orange
+```
 
 ## Contributing
 
