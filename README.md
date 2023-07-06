@@ -17,7 +17,9 @@ Welcome to the documentation of GreenBounty API! This API provides a wide range 
         - [Update profile](#update-profile)
         - [Change password](#change-password)
         - [Delete user](#delete-user)
-    - [Search](#search)
+    - [Item Search](#item-search)
+        - [All Fruits](#all-fruits)
+        - [One_Fruit](#one-fruit)
 3. [Error Handling](#error-handling)
 4. [Examples](#examples)
 5. [Contributing](#contributing)
@@ -76,40 +78,40 @@ GET /api/vi/auth/user
 **Response:**  It serves as a representation of a user's identity and contains details that are relevant to the user's interactions, preferences, and personalization within the given context.
 
 ### Update profile
-**Endpoint:** `/api/vi/auth/update_profile`
+**Endpoint:** `/api/vi/auth/update_profile/<int:pk>/`
 
 **Method:** "POST"
 
 **Example Request**
 ```
-/api/vi/auth/update_profile
+/api/vi/auth/update_profile/<int:pk>/
 ```
 **Response:**  This enables a user to update parameters in their user profile to their preference.
 
 ### Change password
-**Endpoint:** `/api/vi/auth/change_password`
+**Endpoint:** `/api/vi/auth/change_password/<int:pk>/`
 
 **Method:** "POST"
 
 **Example Request**
 ```
-/api/vi/auth/change_password
+/api/vi/auth/change_password/<int:pk>/
 ```
 **Response:**  This request gives users the access to change the password associated with their account.
 
 ### Delete user
-**Endpoint:** `/api/vi/auth/delete_user`
+**Endpoint:** `/api/vi/auth/delete_user/<int:pk>/`
 
 **Method:** "DELETE"
 
 **Example Request**
 ```
-/api/vi/auth/delete_user
+/api/vi/auth/delete_user/<int:pk>/
 ```
 **Response:**  This request enables the user to delete their account associated with GreenBounty API
 
 
-## Search
+## Item search
 Search for fruits or vegetables based on a keyword or partial name.
 
 **Endpoint:** `/api/vi/fruits/search`
