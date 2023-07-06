@@ -108,7 +108,8 @@ class UserLogout(APIView):
 
     def get(self, request):
         logout(request)
-        return Response(status=status.HTTP_200_OK)
+        msg = {'message': 'Logged Out Successfully'}
+        return Response(data=msg, status=status.HTTP_200_OK)
 
 
 class UserView(generics.GenericAPIView):
