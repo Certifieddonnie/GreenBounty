@@ -205,18 +205,25 @@ Usage samples and code snippets
 ```
 /api/v1/auth/login/
 ```
+![image](https://github.com/Certifieddonnie/GreenBounty/assets/81980032/1ea8e4d5-5543-4a0e-af9f-f36a2b7cfffe)
 
 ```
 /api/v1/auth/user/
 ```
+![image](https://github.com/Certifieddonnie/GreenBounty/assets/81980032/5a7c3f79-9fae-4640-a2af-0628db7c96b9)
+
 
 ```
 /api/v1/fruits
 ```
+![image](https://github.com/Certifieddonnie/GreenBounty/assets/81980032/06e1ebfd-31c4-4a18-a0b0-27e2daa64284)
+
 
 ```
 /api/v1/fruits/search?name=Orange
 ```
+![image](https://github.com/Certifieddonnie/GreenBounty/assets/81980032/10c83153-f5c5-44fb-9c28-f5608c1d933e)
+
 
 ## Contributing
 
