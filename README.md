@@ -120,6 +120,7 @@ Search for fruits or vegetables based on a keyword or partial name.
 - query (required): The keyword or partial name to search for. (e.g banana)
 
 **Example Request**
+
 **Query search by name**
 ```
 GET /api/vi/fruits/search?name=banana
@@ -164,13 +165,13 @@ Content for the "Error Handling" section goes here.
 
 ## Examples
 
-Content for the "Examples" section goes here.
+Usage samples and code snippets
 
 ## Contributing
 
-Content for the "Contributing" section goes here.
+Contributions are welcome! If you find any bugs or have suggestions for improvements, please submit an issue or open a pull request.
 
 ## License
 
-Content for the "License" section goes here.
+This API is released under the MIT License.
 
