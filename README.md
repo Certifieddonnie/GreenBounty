@@ -134,16 +134,16 @@ GET /api/vi/fruits
       "ph value": "4.5 - 5.2"
     },
  {
-      "name": "Banana",
-      "botanical name": "Musa spp",
-      "Vitamins": "B6 Pyridoxine",
-      "ph value": "4.5 - 5.2"
+      "name": "Spinach",
+      "botanical name": "Spinacia oleracea",
+      "Vitamins": "Vitamin K",
+      "ph value": "6.0 - 7.0"
     },
   ]
 }
 
 ```
-
+This request returns all items in the database, according to their id. 
 
 ### One item
 
@@ -193,10 +193,6 @@ GET /api/vi/fruits/search?botan=Musa spp
 }
 
 ```
-
-## Error Handling
-
-Content for the "Error Handling" section goes here.
 
 ## Examples
 
