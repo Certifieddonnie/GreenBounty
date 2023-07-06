@@ -18,8 +18,8 @@ Welcome to the documentation of GreenBounty API! This API provides a wide range 
         - [Change password](#change-password)
         - [Delete user](#delete-user)
     - [Item Search](#item-search)
-        - [All Fruits](#all-fruits)
-        - [One_Fruit](#one-fruit)
+        - [All items](#all-items)
+        - [One_item](#one-item)
 3. [Error Handling](#error-handling)
 4. [Examples](#examples)
 5. [Contributing](#contributing)
@@ -113,6 +113,39 @@ GET /api/vi/auth/user
 
 ## Item search
 Search for fruits or vegetables based on a keyword or partial name.
+
+### All Fruits
+
+**Endpoint:** `/api/vi/fruits`
+
+**Method:** "GET"
+
+```
+GET /api/vi/fruits
+```
+**Example Response**
+```
+{
+  "results": [
+    {
+      "name": "Banana",
+      "botanical name": "Musa spp",
+      "Vitamins": "B6 Pyridoxine",
+      "ph value": "4.5 - 5.2"
+    },
+ {
+      "name": "Banana",
+      "botanical name": "Musa spp",
+      "Vitamins": "B6 Pyridoxine",
+      "ph value": "4.5 - 5.2"
+    },
+  ]
+}
+
+```
+
+
+### One item
 
 **Endpoint:** `/api/vi/fruits/search`
 
