@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from users import urls as auth_urls
+from fruits import urls as fruit_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('api/auth/', include(auth_urls)),
+    path('api/v1/auth/', include(auth_urls)),
+    path('api/v1/', include(fruit_urls))
 ]

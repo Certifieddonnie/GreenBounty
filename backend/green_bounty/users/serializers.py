@@ -9,7 +9,8 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ["id", "last_login", "userid",
+                  "email", "date_joined"]
 
 # Register Serializer
 
