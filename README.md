@@ -45,22 +45,22 @@ GET /api/vi/auth
 ### Register
 **Endpoint:** `/api/vi/auth/register`
 
-**Method:** "GET"
+**Method:** "POST"
 
 **Example Request**
 ```
-GET /api/vi/auth/register
+/api/vi/auth/register
 ```
 **Response:** This request enables new users to enter their details and thereafter use to get logged in.
 
 ### Login
 **Endpoint:** `/api/vi/auth/login`
 
-**Method:** "GET"
+**Method:** "POST"
 
 **Example Request**
 ```
-GET /api/vi/auth/login
+/api/vi/auth/login
 ```
 **Response:** This request leads old users to the page where they enter their login details and get logged in to utilise and consume the API.
 
@@ -78,33 +78,33 @@ GET /api/vi/auth/user
 ### Update profile
 **Endpoint:** `/api/vi/auth/update_profile`
 
-**Method:** "GET"
+**Method:** "POST"
 
 **Example Request**
 ```
-GET /api/vi/auth/update_profile
+/api/vi/auth/update_profile
 ```
 **Response:**  This enables a user to update parameters in their user profile to their preference.
 
 ### Change password
 **Endpoint:** `/api/vi/auth/change_password`
 
-**Method:** "GET"
+**Method:** "POST"
 
 **Example Request**
 ```
-GET /api/vi/auth/change_password
+/api/vi/auth/change_password
 ```
 **Response:**  This request gives users the access to change the password associated with their account.
 
 ### Delete user
 **Endpoint:** `/api/vi/auth/delete_user`
 
-**Method:** "GET"
+**Method:** "DELETE"
 
 **Example Request**
 ```
-GET /api/vi/auth/delete_user
+/api/vi/auth/delete_user
 ```
 **Response:**  This request enables the user to delete their account associated with GreenBounty API
 
