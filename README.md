@@ -177,7 +177,7 @@ GET /api/vi/fruits/search?name=banana
 
 **Query search by Botanical name**
 ```
-GET /api/vi/fruits/search?botan=Musa spp
+GET /api/vi/fruits/search?botanic=Musa spp
 ```
 **Example Response**
 ```
