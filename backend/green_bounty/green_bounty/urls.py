@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('api/v1/auth/', include(auth_urls)),
-    path('api/v1/', include(fruit_urls))
+    path('api/v1/', include(fruit_urls)),
+    path('api/v1/', include('wallet.urls')),
 ]
