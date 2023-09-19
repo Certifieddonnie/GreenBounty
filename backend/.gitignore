@@ -1,5 +1,6 @@
-.venv
-green_bounty.vscode
+.venv/
+green_bounty/.vscode
 green_bounty/green_bounty/.env
 green_bounty/db.sqlite3
+venv/
 

@@ -7,8 +7,8 @@ csv_file = 'bounty.csv'
 # MySQL database connection
 conn = mysql.connector.connect(
     host='localhost',
-    user='root',
-    password='root',
+    user='dev',
+    password='pwd',
     database='greenbounty'
 )
 cursor = conn.cursor()
@@ -30,4 +30,3 @@ with open(csv_file, 'r') as file:
 # Commit the changes and close the connection
 conn.commit()
 conn.close()
-

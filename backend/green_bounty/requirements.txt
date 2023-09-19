@@ -4,6 +4,7 @@ backcall==0.2.0
 certifi==2023.5.7
 cffi==1.15.1
 charset-normalizer==3.1.0
+chimoney-py==0.0.2
 comm==0.1.3
 cryptography==40.0.2
 debugpy==1.6.7
@@ -21,7 +22,6 @@ django-utils==0.0.2
 django-utils-six==2.0
 django-utils2==3.0.0
 djangorestframework==3.14.0
-djangorestframework-filters==0.11.1
 djangorestframework-jwt==1.11.0
 dnspython==2.3.0
 email-validator==2.0.0.post2
