@@ -1,4 +1,4 @@
-import csv
+:x
 import mysql.connector
 
 # CSV file path
