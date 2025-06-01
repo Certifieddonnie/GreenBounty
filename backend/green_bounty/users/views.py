@@ -16,6 +16,80 @@ from .validations import clean_data, tidy_data
 
 # helper
 
+from .utils import write_to_rtdb, get_from_rtdb, update_rtdb, delete_from_rtdb
+
+class UserRealtimeDataView(APIView):
+    """
+    API view to manage user-specific data in Firebase Realtime Database.
+    Requires a valid JWT token for authentication.
+    """
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request):
+        """
+        Retrieve data for the authenticated user from RTDB.
+        Data will be stored under 'users/<user_id>/data'.
+        """
+        user_id = str(request.user.id) # Use the Django user's ID as part of the RTDB path
+        rtdb_path = f'users/{user_id}/data'
+
+        try:
+            data = get_from_rtdb(rtdb_path)
+            if data:
+                return Response(data, status=status.HTTP_200_OK)
+            return Response({"message": "No data found for this user in Realtime Database"}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return Response({"error": f"Error retrieving data from RTDB: {e}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    def post(self, request):
+        """
+        Create/overwrite data for the authenticated user in RTDB.
+        """
+        user_id = str(request.user.id)
+        rtdb_path = f'users/{user_id}/data'
+        data_to_store = request.data
+
+        if not isinstance(data_to_store, dict):
+            return Response({"error": "Request data must be a JSON object."}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            write_to_rtdb(rtdb_path, data_to_store)
+            return Response({"message": "Data written to Realtime Database successfully"}, status=status.HTTP_201_CREATED)
+        except Exception as e:
+            return Response({"error": f"Error writing data to RTDB: {e}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    def patch(self, request):
+        """
+        Update (merge) data for the authenticated user in RTDB.
+        """
+        user_id = str(request.user.id)
+        rtdb_path = f'users/{user_id}/data'
+        data_to_update = request.data
+
+        if not isinstance(data_to_update, dict):
+            return Response({"error": "Request data for update must be a JSON object."}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            update_rtdb(rtdb_path, data_to_update)
+            return Response({"message": "Data updated in Realtime Database successfully"}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({"error": f"Error updating data in RTDB: {e}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    def delete(self, request):
+        """
+        Delete data for the authenticated user from RTDB.
+        """
+        user_id = str(request.user.id)
+        rtdb_path = f'users/{user_id}/data'
+
+        try:
+            delete_from_rtdb(rtdb_path)
+            return Response({"message": "Data deleted from Realtime Database successfully"}, status=status.HTTP_204_NO_CONTENT)
+        except Exception as e:
+            return Response({"error": f"Error deleting data from RTDB: {e}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
 
 def get_token(self, request):
     jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER

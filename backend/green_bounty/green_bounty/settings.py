@@ -15,7 +15,50 @@ from pathlib import Path
 import datetime
 from dotenv import load_dotenv
 
+# settings.py
+
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import db
+import json
+
+
 load_dotenv()
+# Option 1: Load from a file path (for development, ensure it's outside version control)
+# FIREBASE_SERVICE_ACCOUNT_PATH = os.path.join(BASE_DIR, 'path/to/your/serviceAccountKey.json')
+# cred = credentials.Certificate(FIREBASE_SERVICE_ACCOUNT_PATH)
+
+# Option 2: Load from an environment variable (recommended for production)
+# The JSON content should be base64 encoded or stored directly as a string
+# For example, if you store the entire JSON as an environment variable:
+# FIREBASE_SERVICE_ACCOUNT_JSON = os.environ.get('FIREBASE_SERVICE_ACCOUNT_JSON')
+# if FIREBASE_SERVICE_ACCOUNT_JSON:
+#     service_account_info = json.loads(FIREBASE_SERVICE_ACCOUNT_JSON)
+#     cred = credentials.Certificate(service_account_info)
+# else:
+#     # Handle the case where the environment variable is not set (e.g., error or default to file)
+#     raise Exception("FIREBASE_SERVICE_ACCOUNT_JSON environment variable not set.")
+
+
+# For simplicity in this example, let's assume you're loading from a file path
+# during development. IMPORTANT: CHANGE THIS FOR PRODUCTION!
+FIREBASE_SERVICE_ACCOUNT_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), os.environ.get('SERVICE_ACCOUNT_KEY_PATH'))
+
+# Replace 'your-firebase-project-service-account-key.json' with the actual filename
+# and ensure it's in a secure location (e.g., outside your project directory,
+# or ensure it's not committed to git).
+
+if os.path.exists(FIREBASE_SERVICE_ACCOUNT_PATH):
+    cred = credentials.Certificate(FIREBASE_SERVICE_ACCOUNT_PATH)
+    firebase_admin.initialize_app(cred, {
+        'databaseURL': os.environ.get('FIREBASE_REALTIME_DATABASE_URL')
+    })
+else:
+    print(f"WARNING: Firebase service account key not found at {FIREBASE_SERVICE_ACCOUNT_PATH}. "
+          "Firebase Realtime Database operations will not work.")
+    # You might want to raise an exception or handle this more robustly in production.
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -29,7 +72,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1']
 
 
 # Application definition

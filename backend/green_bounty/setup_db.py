@@ -1,5 +1,5 @@
-:x
 import mysql.connector
+import csv
 
 # CSV file path
 csv_file = 'bounty.csv'

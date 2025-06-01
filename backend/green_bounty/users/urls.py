@@ -14,4 +14,5 @@ urlpatterns = [
     path('change_password/<int:pk>/',
          views.ChangePasswordView.as_view(), name='change_password'),
     path('delete_user/<int:pk>/', views.DeleteUserView.as_view(), name='delete_user'),
+    path('user-rtdb/', views.UserRealtimeDataView.as_view(), name='user-rtdb'),
 ]
